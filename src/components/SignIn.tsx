@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Inputs from './Inputs';
 import Button from './Button';
 import { BiError } from 'react-icons/bi';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const SignIn = ({ handleFormChange, authState }) => {
 	const isAuthLogin = authState === 'signin';
-	console.log(authState, isAuthLogin, 'Signin');
+	const [slideOut, setSlideOut] = useState(false);
+	const initiateSlideOut = (value) => {
+		setTimeout(() => {
+			handleFormChange(value);
+		}, 300);
+		setSlideOut(true);
+	};
 	return (
 		<div
 			className={`w-2/3 flex flex-col items-center bg-teal-400 px-8 py-10 rounded-lg ${
-				isAuthLogin
-					? 'animate-slideIn delay-1000'
-					: 'animate-slideOut duration-300'
-			}`}
+				isAuthLogin && 'animate-slideIn'
+			} ${slideOut && 'animate-slideOut'}`}
 		>
 			<div className='flex flex-col items-start w-full'>
 				<h1 className='text-3xl font-bold text-neutral-800 mb-3'>
@@ -53,9 +58,13 @@ const SignIn = ({ handleFormChange, authState }) => {
 						/>
 						<span className='ml-1'>Remember Me</span>
 					</label>
-					<p className='text-teal-900 font-medium hover:cursor-pointer'>
+					<Link
+						className='text-teal-900 font-medium hover:cursor-pointer'
+						to='/forgot-password'
+						onClick={() => initiateSlideOut('resetpwd')}
+					>
 						Forgot Password?
-					</p>
+					</Link>
 				</div>
 				<Button
 					label='Sign In'
@@ -67,7 +76,7 @@ const SignIn = ({ handleFormChange, authState }) => {
 				Don't have an account?{' '}
 				<span
 					className='font-medium ml-2'
-					onClick={() => handleFormChange('signup')}
+					onClick={() => initiateSlideOut('signup')}
 				>
 					Sign Up!
 				</span>

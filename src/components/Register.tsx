@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Inputs from './Inputs';
 import Button from './Button';
 import { BiError } from 'react-icons/bi';
 
 const Register = ({ handleFormChange, authState }) => {
 	const isAuthRegister = authState === 'signup';
-	console.log(authState, isAuthRegister, 'Register');
+	const [slideOut, setSlideOut] = useState(false);
+	const initiateSlideOut = (value) => {
+		setTimeout(() => {
+			handleFormChange('signin');
+		}, 300);
+		setSlideOut(true);
+	};
 	return (
 		<div
 			className={`bg-white w-2/3 flex flex-col items-center px-8 py-10 rounded-xl ${
-				isAuthRegister
-					? 'animate-slideIn delay-1000'
-					: 'animate-slideOut duration-300'
-			}`}
+				isAuthRegister && 'animate-slideIn'
+			} ${slideOut && 'animate-slideOut'}`}
 		>
 			<div className='flex flex-col items-start w-full'>
 				<h1 className='text-3xl font-bold text-neutral-800 mb-3'>
@@ -56,7 +60,7 @@ const Register = ({ handleFormChange, authState }) => {
 				<p className='flex justify-center my-2'>
 					Already have an account?
 					<span
-						onClick={() => handleFormChange('signin')}
+						onClick={() => initiateSlideOut('signin')}
 						className='text-teal-600 hover:cursor-pointer ml-2 font-bold'
 					>
 						Sing In
