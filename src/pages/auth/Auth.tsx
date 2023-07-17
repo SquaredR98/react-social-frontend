@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import LoginImage from '../../assets/login.svg';
 import SignupImage from '../../assets/signup.svg';
-import ForgotPassword from '../../components/ForgotPassword';
 import Register from '../../components/Register';
 import SignIn from '../../components/SignIn';
 
@@ -13,7 +12,6 @@ const AuthTabs = () => {
 
 	const signIn = authPage === 'signin';
 	const signUp = authPage === 'signup';
-	const resetPwd = authPage === 'resetpwd';
 
 	return (
 		<div
@@ -44,17 +42,6 @@ const AuthTabs = () => {
 						}`}
 					/>
 				)}
-				{resetPwd && (
-					<img
-						src={SignupImage}
-						alt='login'
-						className={`${
-							resetPwd
-								? 'animate-slideLeftIn'
-								: 'animate-slideLeftOut'
-						}`}
-					/>
-				)}
 			</div>
 			<div className='w-1/2 flex justify-center'>
 				{signIn && (
@@ -65,12 +52,6 @@ const AuthTabs = () => {
 				)}
 				{signUp && (
 					<Register
-						handleFormChange={handleFormChange}
-						authState={authPage}
-					/>
-				)}
-				{resetPwd && (
-					<ForgotPassword
 						handleFormChange={handleFormChange}
 						authState={authPage}
 					/>
