@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Inputs from './Inputs';
@@ -8,10 +8,23 @@ import { BiError } from 'react-icons/bi';
 import { authService } from '../services/api/auth/auth.service';
 
 const ForgotPassword = () => {
-	const [email, setEmail] = useState('');
-	const [loading, setLoading] = useState(false);
-	const [success, setSuccess] = useState(true);
-	const [responseMessage, setResponseMessage] = useState('');
+	const [email, setEmail]: [string, Dispatch<SetStateAction<string>>] =
+		useState('');
+
+	const [loading, setLoading]: [
+		boolean,
+		Dispatch<SetStateAction<boolean>>,
+	] = useState(false);
+
+	const [success, setSuccess]: [
+		boolean,
+		Dispatch<SetStateAction<boolean>>,
+	] = useState(true);
+
+	const [responseMessage, setResponseMessage]: [
+		string,
+		Dispatch<SetStateAction<string>>,
+	] = useState('');
 
 	const forgotPassword = async (event) => {
 		setLoading(true);
