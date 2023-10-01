@@ -17,7 +17,7 @@ export interface ForgotPasswordBody {
 }
 export interface ResetPasswordBody {
 	password: string;
-	confirmPasword: string;
+	confirmPassword: string;
 }
 
 class AuthService {

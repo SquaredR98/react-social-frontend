@@ -68,7 +68,7 @@ const Register = ({ handleFormChange, authState }) => {
 
 	return (
 		<div
-			className={`bg-white w-2/3 flex flex-col items-center px-8 py-10 rounded-xl ${
+			className={`bg-white w-2/3 flex flex-col items-center px-8 py-10 rounded-md border shadow-xl ${
 				isAuthRegister && 'animate-slideIn'
 			} ${slideOut && 'animate-slideOut'}`}
 		>
@@ -132,7 +132,7 @@ const Register = ({ handleFormChange, authState }) => {
 							? 'Sign Up in progress...'
 							: 'Sign Up'
 					}`}
-					className='w-full bg-cyan-950 py-2 text-white mt-4 hover:cursor-pointer hover:bg-cyan-800 transition ease-in-out delay-100 disabled:bg-[#155e7588] disabled:cursor-default'
+					className='w-full bg-blue-600 py-2 text-white mt-4 hover:cursor-pointer hover:bg-blue-600/90 transition ease-in-out delay-100 disabled:bg-blue-600/40 disabled:cursor-default'
 					disabled={
 						!formData.email ||
 						!formData.password ||
@@ -143,7 +143,7 @@ const Register = ({ handleFormChange, authState }) => {
 					Already have an account?
 					<span
 						onClick={() => initiateSlideOut('signin')}
-						className='text-teal-600 hover:cursor-pointer ml-2 font-bold'
+						className='text-blue-400 hover:text-blue-600 hover:cursor-pointer ml-2 font-bold'
 					>
 						Sing In
 					</span>

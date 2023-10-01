@@ -44,12 +44,30 @@ module.exports = {
 						opacity: 0,
 					},
 				},
+				fadeIn: {
+					'0%': {
+						opacity: '0',
+					},
+					'100%': {
+						opacity: '1',
+					},
+				},
+				fadeOut: {
+					'0%': {
+						opacity: '1',
+					},
+					'100%': {
+						opacity: '0',
+					},
+				},
 			},
 			animation: {
 				slideIn: 'slideIn 1s ease-in-out',
 				slideOut: 'slideOut 1s ease-in-out',
 				slideLeftIn: 'slideLeftIn 1s ease-in-out',
 				slideLeftOut: 'slideLeftOut 1s ease-out-out',
+				fadeIn: 'fadeIn 1s ease-in-out',
+				fadeOut: 'fadeOut 1s ease-in-out',
 			},
 		},
 	},

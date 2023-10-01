@@ -15,9 +15,7 @@ const AuthTabs = () => {
 
 	return (
 		<div
-			className={`h-screen flex justify-between items-center overflow-hidden transition duration-1000 ${
-				authPage === 'signup' ? 'bg-teal-400' : ''
-			}`}
+			className={`h-screen flex justify-between items-center overflow-hidden transition duration-1000`}
 		>
 			<div className='w-1/2'>
 				{signIn && (
