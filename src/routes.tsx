@@ -5,6 +5,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import ForgotPassword from '@components/ForgotPassword';
 import ResetPassword from '@components/ResetPassword';
 import AuthTabs from '@pages/auth/Auth';
+import Feeds from '@pages/social/Feeds/Feeds';
 
 const element = createBrowserRouter([
 	{
@@ -18,6 +19,10 @@ const element = createBrowserRouter([
 	{
 		path: '/reset-password',
 		element: <ResetPassword />,
+	},
+	{
+		path: '/feeds',
+		element: <Feeds />,
 	},
 ]);
 

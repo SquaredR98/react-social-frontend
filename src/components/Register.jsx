@@ -4,13 +4,13 @@ import Button from "@components/Button";
 import { BiError } from "react-icons/bi";
 import { Utils } from "@static/utils.services";
 import { authService } from "@services/api/auth/auth.service";
+import { useNavigate } from "react-router";
 
 const Register = ({ handleFormChange, authState }) => {
+  const navigateTo = useNavigate();
   const isAuthRegister = authState === "signup";
-
   // To decide when to initiate the slide out animation of the form.
   const [slideOut, setSlideOut] = useState(false);
-
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -58,7 +58,7 @@ const Register = ({ handleFormChange, authState }) => {
   useEffect(() => {
     if (loading && !user) return;
     if (user) {
-      console.log();
+      navigateTo('feeds')
     }
   }, [loading, user]);
 
