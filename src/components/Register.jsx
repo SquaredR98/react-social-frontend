@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Inputs from "./Inputs";
-import Button from "./Button";
+import Inputs from "@components/Inputs";
+import Button from "@components/Button";
 import { BiError } from "react-icons/bi";
-import { Utils } from "../static/utils.services";
-import { authService } from "../services/api/auth/auth.service";
+import { Utils } from "@static/utils.services";
+import { authService } from "@services/api/auth/auth.service";
 
 const Register = ({ handleFormChange, authState }) => {
   const isAuthRegister = authState === "signup";

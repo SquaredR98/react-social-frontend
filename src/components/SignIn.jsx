@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import Inputs from "./Inputs";
-import Button from "./Button";
+import Inputs from "@components/Inputs";
+import Button from "@components/Button";
 import { BiError } from "react-icons/bi";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { authService } from "../services/api/auth/auth.service";
+import { authService } from "@services/api/auth/auth.service";
 
 const SignIn = ({ handleFormChange, authState }) => {
   const isAuthLogin = authState === "signin";

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { BiError } from 'react-icons/bi';
 import { Link, useSearchParams } from 'react-router-dom';
 
-import Inputs from './Inputs';
-import Button from './Button';
-import { authService } from '../services/api/auth/auth.service';
+import Inputs from '@components/Inputs';
+import Button from '@components/Button';
+import { authService } from '@services/api/auth/auth.service';
 
 const ResetPassword = () => {
 	const [searchParams] = useSearchParams();

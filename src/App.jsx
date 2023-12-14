@@ -1,5 +1,5 @@
 import { RouterProvider } from "react-router-dom";
-import AppRouter from "./routes";
+import AppRouter from "@root/routes";
 
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";

@@ -1,11 +1,11 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import PropTypes from "prop-types";
 
-import Inputs from "./Inputs";
-import Button from "./Button";
+import Inputs from "@components/Inputs";
+import Button from "@components/Button";
 import { Link } from "react-router-dom";
 import { BiError } from "react-icons/bi";
-import { authService } from "../services/api/auth/auth.service";
+import { authService } from "@services/api/auth/auth.service";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");

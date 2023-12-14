@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import LoginImage from '../../assets/login.svg';
-import SignupImage from '../../assets/signup.svg';
-import Register from '../../components/Register';
-import SignIn from '../../components/SignIn';
+import LoginImage from '@assets/login.svg';
+import SignupImage from '@assets/signup.svg';
+import Register from '@components/Register';
+import SignIn from '@components/SignIn';
 
 const AuthTabs = () => {
 	const [authPage, setAuthPage] = useState('signin');
